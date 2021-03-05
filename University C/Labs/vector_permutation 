@@ -1,0 +1,45 @@
+//Vector Permutation
+//Shahid Hussain z5257684
+//20th October 2019
+
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main(void) {
+
+    int length;
+    int vector[MAX_SIZE] = {0};
+    int perm[MAX_SIZE] = {0};
+    
+    printf("Enter vector length: ");
+    scanf("%d", &length);
+    
+    printf("Enter vector: ");
+    int counter = 0;
+    while (counter < length) {
+        scanf("%d", &vector[counter]);
+        counter++;
+    }
+    
+    printf("Enter permutation: ");
+    counter = 0;
+    while (counter < length) {
+        scanf("%d", &perm[counter]);
+        if (perm[counter] < 0 || perm[counter] >= length) {
+            printf("Invalid permutation\n");
+            return 0;
+        }
+        counter++;
+    }
+
+    counter = 0;
+    while (counter < length) {
+        int i = vector[perm[counter]];
+        printf("%d", i);
+        counter++;
+    }    
+    printf("\n");
+    
+    return 0;
+}
